@@ -48,7 +48,7 @@ export default function WishWall() {
   };
 
   return (
-    <section className="mx-auto max-w-5xl px-6 py-24">
+    <section className="mx-auto max-w-6xl px-5 py-16 sm:px-6 sm:py-24">
       <motion.h2
         className="gradient-text wavy text-center font-script text-4xl sm:text-5xl"
         initial={{ opacity: 0, y: 20 }}
@@ -62,13 +62,13 @@ export default function WishWall() {
         <p className="mb-6 text-center text-xs text-rose-400">(Chế độ demo – dữ liệu mẫu, chưa kết nối cơ sở dữ liệu)</p>
       )}
 
-      <form onSubmit={submit} className="glass mx-auto mb-12 max-w-xl space-y-3 rounded-[2rem] p-6">
+      <form onSubmit={submit} className="glass mx-auto mb-10 max-w-xl space-y-3 rounded-[2rem] p-5 sm:p-6 lg:max-w-2xl">
         <input
           value={name}
           onChange={(e) => setName(e.target.value)}
           maxLength={40}
           placeholder="Tên của bạn"
-          className="w-full rounded-xl border border-pink-200 bg-white/80 px-4 py-3 outline-none focus:ring-2 focus:ring-pink-300"
+          className="w-full rounded-2xl border-2 border-pink-200 bg-white px-4 py-3 text-base outline-none focus:ring-2 focus:ring-pink-300"
         />
         <textarea
           value={message}
@@ -76,20 +76,20 @@ export default function WishWall() {
           maxLength={200}
           rows={3}
           placeholder="Viết lời chúc 8/3..."
-          className="w-full resize-none rounded-xl border border-pink-200 bg-white/80 px-4 py-3 outline-none focus:ring-2 focus:ring-pink-300"
+          className="w-full resize-none rounded-2xl border-2 border-pink-200 bg-white px-4 py-3 text-base outline-none focus:ring-2 focus:ring-pink-300"
         />
         {err && <p className="text-sm text-red-500">{err}</p>}
         <motion.button
           disabled={busy}
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.95 }}
-          className="w-full candy-btn rounded-full bg-gradient-to-b from-pink-300 to-rose-400 py-3 font-bold text-white disabled:opacity-60"
+          className="w-full candy-btn rounded-full bg-gradient-to-b from-pink-300 to-rose-400 py-3.5 text-lg font-bold text-white disabled:opacity-60"
         >
           {busy ? "Đang gửi..." : "Gửi lời chúc 💖"}
         </motion.button>
       </form>
 
-      <div className="columns-1 gap-4 sm:columns-2 lg:columns-3">
+      <div className="columns-1 gap-4 sm:columns-2 lg:columns-3 xl:columns-4">
         <AnimatePresence>
           {wishes.map((w, i) => (
             <motion.div

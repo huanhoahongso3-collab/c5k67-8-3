@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Chúc mừng 8/3 – C5K67 11 Nga 🌸",
   description: "Gửi các nàng lớp 11 Nga – C5K67 những lời chúc 8/3 ngọt ngào nhất.",
 };
-export const viewport: Viewport = { themeColor: "#ffd1e0" };
+export const viewport: Viewport = { themeColor: "#ffd1e0", width: "device-width", initialScale: 1, viewportFit: "cover" };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

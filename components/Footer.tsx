@@ -16,7 +16,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="px-6 pb-20 pt-10 text-center">
+    <footer className="px-5 pb-24 pt-10 text-center">
       <div className="mb-4 flex items-end justify-center gap-3">
         <KawaiiFlower size={56} color="#c9a7ff" className="animate-sway" />
         <Bow size={64} className="animate-float" />
@@ -24,7 +24,7 @@ export default function Footer() {
       </div>
       <motion.button
         onClick={shower}
-        className="candy-btn rounded-full bg-gradient-to-b from-purple-300 to-pink-400 px-8 py-3 font-bold text-white"
+        className="candy-btn rounded-full bg-gradient-to-b from-purple-300 to-pink-400 px-8 py-3.5 text-lg font-bold text-white"
         whileHover={{ scale: 1.08, rotate: 2 }}
         whileTap={{ scale: 0.92 }}
       >

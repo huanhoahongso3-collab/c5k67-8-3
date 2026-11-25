@@ -10,20 +10,20 @@ const cards = [
 
 export default function Greeting() {
   return (
-    <section id="loi-chuc" className="mx-auto max-w-5xl px-6 py-24">
+    <section id="loi-chuc" className="mx-auto max-w-6xl px-5 py-16 sm:px-6 sm:py-24">
       <motion.h2
-        className="gradient-text wavy mb-12 text-center font-script text-4xl sm:text-5xl"
+        className="gradient-text wavy mb-12 text-center font-script text-[clamp(1.75rem,8vw,3rem)] leading-tight"
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
       >
         Gửi các nàng C5K67
       </motion.h2>
-      <div className="grid gap-8 md:grid-cols-3">
+      <div className="grid gap-6 sm:gap-8 md:grid-cols-3">
         {cards.map((c, i) => (
           <motion.div
             key={c.title}
-            className="glass rounded-[2rem] p-8 text-center"
+            className="glass rounded-[2rem] p-6 text-center sm:p-8"
             initial={{ opacity: 0, x: i === 0 ? -60 : i === 2 ? 60 : 0, y: 40 }}
             whileInView={{ opacity: 1, x: 0, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
@@ -37,7 +37,7 @@ export default function Greeting() {
         ))}
       </div>
       <motion.div
-        className="relative mx-auto mt-16 max-w-2xl rounded-[2rem] bg-pink-100/80 px-8 py-8 text-center"
+        className="relative mx-auto mt-14 max-w-2xl rounded-[2rem] bg-pink-100/80 px-6 py-7 sm:px-8 lg:max-w-3xl text-center"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
@@ -45,7 +45,7 @@ export default function Greeting() {
       >
         <Heart size={36} className="absolute -left-3 -top-4 animate-float" />
         <Cloud size={70} className="absolute -bottom-6 -right-4 animate-float" />
-        <p className="font-hand text-lg font-semibold leading-relaxed text-rose-700">
+        <p className="font-hand text-base font-semibold leading-relaxed text-rose-700 sm:text-lg lg:text-xl">
           Nhân ngày Quốc tế Phụ nữ 8/3, chúc các bạn nữ lớp 11 Nga luôn khỏe mạnh, hạnh phúc, tự tin tỏa sáng và
           thực hiện được mọi ước mơ. Cảm ơn các cậu vì đã làm nên một C5K67 thật đáng nhớ! ♡
         </p>

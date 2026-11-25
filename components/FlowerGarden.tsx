@@ -23,9 +23,9 @@ export default function FlowerGarden() {
   };
 
   return (
-    <section className="mx-auto max-w-4xl px-6 py-24 text-center">
+    <section className="mx-auto max-w-5xl px-5 py-16 sm:px-6 sm:py-24 text-center">
       <motion.h2
-        className="gradient-text wavy font-script text-4xl sm:text-5xl"
+        className="gradient-text wavy font-script text-[clamp(1.75rem,8vw,3rem)] leading-tight"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -34,12 +34,12 @@ export default function FlowerGarden() {
       </motion.h2>
       <p className="mb-10 mt-3 font-hand font-semibold text-rose-600">Chạm vào một bông hoa để nhận lời chúc dành riêng cho cậu ♡</p>
 
-      <div className="grid grid-cols-4 gap-3 sm:gap-8">
+      <div className="grid grid-cols-4 gap-x-2 gap-y-4 sm:gap-6 lg:grid-cols-8">
         {COLORS.map((c, i) => (
           <motion.button
             key={i}
             onClick={(e) => pick(i, e)}
-            className="flex justify-center"
+            className="flex justify-center p-1"
             initial={{ scale: 0, rotate: -90 }}
             whileInView={{ scale: 1, rotate: 0 }}
             viewport={{ once: true }}
@@ -48,12 +48,12 @@ export default function FlowerGarden() {
             whileTap={{ scale: 0.8 }}
             aria-label="Chọn hoa"
           >
-            <KawaiiFlower size={72} color={c} className="animate-sway drop-shadow-md" style={{ animationDelay: `${i * 0.25}s` }} />
+            <KawaiiFlower size={72} color={c} className="h-auto w-full max-w-[84px] animate-sway drop-shadow-md" style={{ animationDelay: `${i * 0.25}s` }} />
           </motion.button>
         ))}
       </div>
 
-      <div className="perspective mx-auto mt-12 min-h-[12rem] max-w-md">
+      <div className="perspective mx-auto mt-10 min-h-[13rem] max-w-md lg:max-w-lg">
         <AnimatePresence mode="wait">
           {picked && (
             <motion.div
@@ -65,7 +65,7 @@ export default function FlowerGarden() {
               transition={{ duration: 0.45 }}
             >
               <div className="mb-2 flex justify-center">{picked.i % 2 ? <Bunny size={64} /> : <Cat size={64} />}</div>
-              <p className="font-hand text-xl font-semibold leading-snug text-rose-600">{picked.msg}</p>
+              <p className="font-hand text-lg font-semibold leading-snug text-rose-600 sm:text-xl lg:text-2xl">{picked.msg}</p>
             </motion.div>
           )}
         </AnimatePresence>

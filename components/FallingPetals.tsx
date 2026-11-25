@@ -30,12 +30,16 @@ export default function FallingPetals() {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     let w = 0, h = 0, raf = 0;
     const resize = () => {
-      w = canvas.width = window.innerWidth;
-      h = canvas.height = window.innerHeight;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = window.innerWidth;
+      h = window.innerHeight;
+      canvas.width = w * dpr;
+      canvas.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
     resize();
     window.addEventListener("resize", resize);
-    const count = window.innerWidth < 640 ? 16 : 30;
+    const count = window.innerWidth < 640 ? 12 : window.innerWidth < 1024 ? 22 : 34;
     const mk = (initial: boolean) => ({
       x: Math.random() * w,
       y: initial ? Math.random() * h : -30,
@@ -77,5 +81,5 @@ export default function FallingPetals() {
     };
   }, []);
 
-  return <canvas ref={ref} className="pointer-events-none fixed inset-0 z-30" aria-hidden />;
+  return <canvas ref={ref} className="pointer-events-none fixed left-0 top-0 z-30 h-full w-full" aria-hidden />;
 }

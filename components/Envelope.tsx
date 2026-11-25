@@ -28,7 +28,7 @@ export default function Envelope() {
     <AnimatePresence>
       {!gone && (
         <motion.div
-          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-gradient-to-br from-pink-200 via-rose-100 to-purple-200"
+          className="fixed inset-0 z-50 h-[100dvh] flex flex-col items-center justify-center bg-gradient-to-br from-pink-200 via-rose-100 to-purple-200"
           exit={{ opacity: 0, scale: 1.1 }}
           transition={{ duration: 0.7 }}
         >
@@ -45,7 +45,7 @@ export default function Envelope() {
           <button
             onClick={openIt}
             aria-label="Mở thiệp"
-            className="relative h-44 w-64 sm:h-52 sm:w-80 outline-none"
+            className="relative h-44 w-[min(18rem,78vw)] sm:h-56 sm:w-96 outline-none"
           >
             <motion.div
               className="absolute inset-0 rounded-2xl bg-gradient-to-b from-pink-300 to-rose-400 shadow-2xl"
