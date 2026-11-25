@@ -10,8 +10,8 @@ export default function CursorTrail() {
       if (now - last < 60) return;
       last = now;
       const el = document.createElement("span");
-      el.textContent = ["💗", "🌸", "✨"][Math.floor(Math.random() * 3)];
-      el.style.cssText = `position:fixed;left:${x}px;top:${y}px;pointer-events:none;z-index:60;font-size:${12 + Math.random() * 12}px;transition:transform 1s ease-out,opacity 1s ease-out;transform:translate(-50%,-50%);opacity:1`;
+      el.textContent = ["♡", "✿", "★", "❀"][Math.floor(Math.random() * 4)];
+      el.style.cssText = `position:fixed;left:${x}px;top:${y}px;pointer-events:none;z-index:60;color:${["#ff5c8d","#c77dff","#ffb703","#ff8fb1"][Math.floor(Math.random()*4)]};font-size:${12 + Math.random() * 12}px;transition:transform 1s ease-out,opacity 1s ease-out;transform:translate(-50%,-50%);opacity:1`;
       document.body.appendChild(el);
       requestAnimationFrame(() => {
         el.style.transform = `translate(${(Math.random() - 0.5) * 60}px,${20 + Math.random() * 50}px) scale(.4) rotate(${Math.random() * 90}deg)`;

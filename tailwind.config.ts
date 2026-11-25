@@ -6,6 +6,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         script: ["var(--font-script)", "cursive"],
+        hand: ["var(--font-hand)", "cursive"],
         body: ["var(--font-body)", "sans-serif"],
       },
       colors: {

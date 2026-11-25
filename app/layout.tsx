@@ -1,9 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Dancing_Script, Quicksand } from "next/font/google";
+import { Baloo_2, Mali, Pacifico } from "next/font/google";
 import "./globals.css";
 
-const script = Dancing_Script({ subsets: ["vietnamese", "latin"], variable: "--font-script" });
-const body = Quicksand({ subsets: ["vietnamese", "latin"], variable: "--font-body" });
+const script = Pacifico({ subsets: ["vietnamese", "latin"], weight: "400", variable: "--font-script" });
+const body = Baloo_2({ subsets: ["vietnamese", "latin"], variable: "--font-body" });
+const hand = Mali({ subsets: ["vietnamese", "latin"], weight: ["400", "600"], variable: "--font-hand" });
 
 export const metadata: Metadata = {
   title: "Chúc mừng 8/3 – C5K67 11 Nga 🌸",
@@ -13,7 +14,7 @@ export const viewport: Viewport = { themeColor: "#ffd1e0" };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="vi" className={`${script.variable} ${body.variable}`}>
+    <html lang="vi" className={`${script.variable} ${body.variable} ${hand.variable}`}>
       <body className="font-body">{children}</body>
     </html>
   );

@@ -19,4 +19,4 @@ Không có `DATABASE_URL` → chạy **chế độ demo** (dữ liệu mẫu tro
 Import repo vào Vercel, đặt `DATABASE_URL`, deploy.
 
 ## Nhạc
-Nút 🎵 góc phải dưới phát giai điệu hộp nhạc được tạo trực tiếp bằng Web Audio (không cần file âm thanh).
+Nút ♪ góc phải dưới phát giai điệu hộp nhạc được tạo trực tiếp bằng Web Audio (không cần file âm thanh).

@@ -2,6 +2,7 @@
 import confetti from "canvas-confetti";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { Bow, Heart, KawaiiFlower, Sparkle, Star } from "./Kawaii";
 
 export default function Envelope() {
   const [open, setOpen] = useState(false);
@@ -31,12 +32,15 @@ export default function Envelope() {
           exit={{ opacity: 0, scale: 1.1 }}
           transition={{ duration: 0.7 }}
         >
+          <Star size={32} className="absolute left-[12%] top-[18%] animate-sway" />
+          <KawaiiFlower size={56} color="#c9a7ff" className="absolute right-[10%] top-[14%] animate-float" />
+          <Sparkle size={22} color="#fff" className="absolute bottom-[22%] left-[16%] animate-pulse" />
           <motion.p
-            className="mb-8 px-6 text-center font-script text-3xl text-rose-600 sm:text-4xl"
+            className="mb-8 px-6 text-center font-script text-2xl text-rose-600 sm:text-3xl"
             animate={{ y: [0, -8, 0] }}
             transition={{ repeat: Infinity, duration: 2.4 }}
           >
-            Có một điều bất ngờ dành cho các nàng C5K67 💌
+            Có điều bất ngờ dành cho các nàng C5K67 ♡
           </motion.p>
           <button
             onClick={openIt}
@@ -54,7 +58,7 @@ export default function Envelope() {
               animate={open ? { y: -90 } : { y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
             >
-              <span className="font-script text-2xl text-rose-500">8/3 💖</span>
+              <span className="font-script text-2xl text-rose-500">8/3 ♡</span>
             </motion.div>
             <div
               className="absolute inset-x-0 bottom-0 h-3/5 rounded-b-2xl bg-gradient-to-t from-rose-400 to-pink-300"
@@ -68,15 +72,16 @@ export default function Envelope() {
             />
             {!open && (
               <motion.span
-                className="absolute left-1/2 top-[48%] -translate-x-1/2 text-4xl"
+                className="absolute left-1/2 top-[46%] -translate-x-1/2 -translate-y-1/2"
                 animate={{ scale: [1, 1.25, 1] }}
                 transition={{ repeat: Infinity, duration: 1.2 }}
               >
-                💗
+                <Heart size={52} color="#fff" />
               </motion.span>
             )}
+            <Bow size={64} className="absolute -top-5 left-1/2 -translate-x-1/2 animate-sway" color="#ffd166" />
           </button>
-          <p className="mt-10 text-sm text-rose-500">{open ? "Chúc mừng 8/3! 🎉" : "Chạm vào để mở thiệp"}</p>
+          <p className="mt-10 font-hand text-base font-semibold text-rose-500">{open ? "Chúc mừng 8/3! ✿" : "Chạm vào để mở thiệp nè ♡"}</p>
         </motion.div>
       )}
     </AnimatePresence>
