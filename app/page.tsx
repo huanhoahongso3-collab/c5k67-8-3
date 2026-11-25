@@ -1,7 +1,7 @@
 import CursorTrail from "@/components/CursorTrail";
 import Envelope from "@/components/Envelope";
 import FallingPetals from "@/components/FallingPetals";
-import FlowerGarden from "@/components/FlowerGarden";
+import GiftBoxes from "@/components/GiftBoxes";
 import Footer from "@/components/Footer";
 import Greeting from "@/components/Greeting";
 import Hero from "@/components/Hero";
@@ -17,7 +17,7 @@ export default function Home() {
       <Envelope />
       <Hero />
       <Greeting />
-      <FlowerGarden />
+      <GiftBoxes />
       <WishWall />
       <Footer />
     </main>

@@ -87,7 +87,7 @@ export default function MusicToggle() {
     <button
       onClick={on ? stop : start}
       aria-label={on ? "Tắt nhạc" : "Bật nhạc"}
-      className="fixed bottom-[max(1rem,env(safe-area-inset-bottom))] right-[max(1rem,env(safe-area-inset-right))] z-[55] flex h-14 w-14 items-center justify-center rounded-full border-4 border-white bg-pink-100 text-2xl shadow-lg"
+      className="fixed bottom-[max(1rem,env(safe-area-inset-bottom))] right-[max(1rem,env(safe-area-inset-right))] z-[55] flex h-14 w-14 items-center justify-center rounded-full border-4 border-white bg-pink-200 text-2xl shadow-lg"
     >
       <span className={`font-bold text-pink-500 ${on ? "animate-bounce" : "opacity-60"}`}>{on ? "♪" : "♡"}</span>
     </button>
